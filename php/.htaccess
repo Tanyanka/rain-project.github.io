@@ -1,0 +1,50 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# Включаем кэш в браузерах посетителей
+<ifModule mod_headers.c>
+# Все html и htm файлы будут храниться в кэше браузера один день
+<FilesMatch "\.(html|htm)$">
+Header set Cache-Control "max-age=43200"
+</FilesMatch>
+# Все css, javascript и текстовые файлы будут храниться в кэше браузера одну неделю
+<FilesMatch "\.(js|css|txt)$">
+Header set Cache-Control "max-age=604800"
+</FilesMatch>
+# Все флэш файлы и изображения будут храниться в кэше браузера один месяц
+<FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+# Отключаем кеширование php и других служебных файлов
+<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+Header unset Cache-Control
+</FilesMatch>
+</IfModule>
+# END WordPress
+
+# Wordfence WAF
+<IfModule LiteSpeed>
+php_value auto_prepend_file '/home/myrain/myrain.in.ua/www/wordfence-waf.php'
+</IfModule>
+<IfModule lsapi_module>
+php_value auto_prepend_file '/home/myrain/myrain.in.ua/www/wordfence-waf.php'
+</IfModule>
+<Files ".user.ini">
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+</IfModule>
+</Files>
+
+# END Wordfence WAF

@@ -1,0 +1,230 @@
+@import "constants";
+
+.mob-version,
+.small-device-menu,
+.toggle-nav-button {
+  display: none;
+}
+@keyframes from-top {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 13px 0 10px;
+  box-shadow: 0px 4px 14.72px 1.28px rgba(14, 14, 14, 0.26);
+  background-color: #fff;
+  z-index: 2000;
+  opacity: 0;
+  transform: translateY(-200%);
+  animation: from-top .5s linear forwards;
+}
+
+.main-nav {
+  a {
+    padding: 17px 10px;
+    color: #535353;
+    font-size: 14px;
+    font-weight: bold;
+    &:hover {
+      color: $color-pink;
+    }
+  }
+}
+.r-call-us {
+  .r-phone {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 3px;
+    a {
+      background: linear-gradient(45deg, $color-pink 0%, $color-orange 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: $color-pink;
+    }
+  }
+  .consultation-button {
+    padding: 8px 20px 10px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}
+.r-soc-icons {
+  img {
+    display: block;
+  }
+  a:first-child {
+    margin-right: 10px;
+  }
+}
+.product-menu-container {
+  position: fixed;
+  padding: 20px 0;
+  top: 200px;
+  right: 20px;
+  background-color: rgba(249, 249, 249, .9);
+  z-index: 50;
+  font-weight: 900;
+  font-size: 25px;
+  li {
+    &:nth-child(1) {
+      color: $color-pink;
+    }
+    &:nth-child(2) {
+      color: $color-green-light;
+    }
+    &:nth-child(3) {
+      color: $color-orange;
+    }
+    &:nth-child(4) {
+      color: $color-yellow;
+    }
+    &:nth-child(5) {
+      color: $color-green;
+    }
+
+  }
+  a {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+}
+@media screen and (max-width: 1260px){
+  .menu-main-menu-container {
+    display: none;
+  }
+  .small-device-menu {
+    position: fixed;
+    display: block;
+    top: 53px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    z-index: 1900;
+    background-color: #fff;
+    transform: translateY(-150%);
+    transition: transform .6s linear;
+    .main-nav a {
+      color: rgba(83, 83, 83,0);
+      transition: color  .35s  0s linear;
+    }
+    &.open {
+      display: block;
+      transform: translateY(0);
+      transition: transform .6s linear;
+      .menu-main-menu-container {
+        display: block;
+      }
+      .main-nav a {
+        color: rgba(83, 83, 83,1);
+        transition: color  .35s  .6s linear;
+      }
+    }
+    .main-nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 0 30px;
+    }
+  }
+  .toggle-nav-button {
+    display: block;
+    position: relative;
+    width: 33px;
+    height: 23px;
+    cursor: pointer;
+    .bar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 33px;
+      height: 4px;
+      border-radius: 3px;
+      background: $primary-gradient;
+      transition: all .25s linear;
+      &:before, &:after {
+        position: absolute;
+        content: "";
+        background: $primary-gradient;
+        width: 100%;
+        height: 4px;
+        border-radius: 8px;
+        transform-origin: 50% 50%;
+        transition: all .25s linear;
+      }
+      &:before {
+        top: -8px;
+      }
+      &:after {
+        top: 8px;
+      }
+    }
+    &.open .bar:after,
+    &.open .bar:before {
+      top: 0;
+    }
+    &.open .bar:after{
+      transform: rotate(45deg);
+    }
+    &.open .bar:before {
+      transform: rotate(-45deg);
+    }
+    &.open .bar{
+      background: transparent;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1260px){
+
+  header .content {
+      max-width: 747px;
+    .r-logo {
+      margin-right: 100px;
+    }
+  }
+  .r-logo {
+    svg {
+      height: 25px !important;
+      width: 57px !important;
+    }
+  }
+  .r-call-us {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .r-phone {
+      margin-right: 40px;
+    }
+  }
+  .main-nav {
+    a {
+      padding: 15px 10px;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .mob-version {
+    display: inline-block;
+  }
+  .r-phone,
+  .r-soc-icons,
+  .main-versilon {
+    display: none;
+  }
+  .r-logo {
+    svg {
+      height: 18px !important;
+      width: 56px !important;
+    }
+  }
+  .product-menu-container {
+    display: none;
+  }
+}

@@ -1,0 +1,431 @@
+@import "constants";
+
+
+
+
+/* lazy load imgs */
+.products {
+  z-index: 2;
+}
+.product,
+section {
+  position: relative;
+  &.advantages  {
+    z-index: 3;
+  }
+  >div {
+    position: relative;
+    z-index: 4;
+  }
+}
+.slide-img-2 {
+  top: 0;
+  left:0;
+}
+.slide-img-1 {
+  top: 20%;
+  right: 0;
+}
+.product-info-second >div,
+.product-info-main-img {
+  position: relative;
+  z-index: 4;
+}
+.fr-parallax {
+  position: absolute;
+  z-index: 1;
+}
+.sertificate-img-1 {
+  right: 0;
+  bottom: -30%;
+}
+.about-company-img-1 {
+  top: -50px;
+  right: 0;
+}
+.about-company-img-2 {
+  bottom: -110%;
+  left: 0;
+}
+.product-img-1  {
+  top: 28%;
+  left: 0;
+}
+.product-img-2  {
+  top: 15%;
+  right: 0;
+}
+.product-img-3  {
+  bottom: -15%;
+  left: 0;
+}
+.product-img-4  {
+  bottom: 5%;
+  right: 0;
+}
+/* end lazy load imgs */
+.r-sertificates,
+.about-company {
+  margin-bottom: 60px;
+  .fr-h2 {
+    margin-bottom: 70px;
+    text-align: right;
+  }
+}
+.video-block {
+  position: relative;
+  width: 42%;
+  padding-bottom: 21.5%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+}
+.about-company-content {
+  font-size: 14px;
+  line-height: 22px;
+}
+.t-sertificates-logo  {
+  > div {
+    flex-wrap: wrap;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    > .sertificate-link {
+      display: flex;
+      align-items: center;
+      margin-bottom: 35px;
+      width: 198px;
+      img {
+        display: block;
+        margin: 0 auto;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        &:hover {
+          filter: grayscale(0%);
+        }
+      }
+    }
+  }
+}
+.advantages {
+  position: relative;
+  margin-bottom: 80px;
+
+  .fr-h2 {
+    margin-bottom: 60px;
+  }
+  .cold-gym {
+    margin-bottom: 60px;
+  }
+  .cold-gym-img {
+    color: #00aeef;
+    font-size: 14px;
+    font-weight: 300;
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 170px;
+      height: 170px;
+      border: 4px solid #00aeef;
+      box-sizing: border-box;
+      border-radius: 50%;
+      text-align: center;
+      p {
+        max-width: 60%;
+        margin: 10px auto 0;
+      }
+    }
+  }
+  .cold-gym-text {
+    width: 65%;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.advantages-infografic {
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: right;
+  > div {
+    margin-bottom: 40px;
+  }
+  .advantage {
+    width: 65%;
+  }
+  .advantage-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    width: 136px;
+    height: 136px;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  > div:first-child {
+    .advantage-icon {
+      border: 5px solid #8cc63f;
+    }
+  }
+  > div:nth-child(2) {
+    .advantage-icon {
+      border: 5px solid #ff8002;
+    }
+  }
+  > div:nth-child(3) {
+    .advantage-icon {
+      border: 5px solid #ec018a;
+    }
+  }
+}
+.advantage-img {
+  position: relative;
+  height: 620px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &::after {
+    position: absolute;
+    display: block;
+    top: 88%;
+    right: -72%;
+    text-transform: uppercase;
+    font-size: 200px;
+    color: $color-green-light;
+    opacity: .5;
+    font-weight: 800;
+    content: 'NATURAL';
+  }
+}
+.get-raine-advertising {
+  background: url(../img/rain-man.jpg) center center no-repeat;
+  background-size: cover;
+  padding: 60px 0 42px;
+  .slogan {
+    margin-bottom: 45px;
+    font-weight: 900;
+    font-size: 50px;
+    color: $color-text;
+  }
+  .group {
+    margin-bottom: 10px;
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+  .prod {
+    font-weight: 900;
+    font-size: 50px;
+  }
+  .how-mutch {
+    color: #fff;
+    font-weight: 900;
+    font-size: 200px;
+    line-height: 1.5;
+    align-self: flex-end;
+  }
+}
+.pink {
+  color: $color-pink;
+}
+.white {
+  color: #fff;
+}
+.green {
+  color: $color-green-light;
+}
+@media screen and (max-width: 1110px){
+  .advantage-img {
+    display: none;
+  }
+  .advantages-content {
+    width: 100%;
+  }
+  .how-mutch {
+    display: none;
+  }
+}
+.call-back {
+  display: flex;
+  align-items: center;
+  height: 468px;
+  width: 100%;
+  background: url('../img/rain-sostav.jpg') center center no-repeat;
+  background-size:cover;
+  .question-text {
+    margin-bottom: 15px;
+    font-size: 50px;
+    font-weight: 900;
+    color: $color-text;
+    text-transform: uppercase;
+  }
+  .question-answer {
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 800;
+  }
+  .button {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 16px;
+  }
+  .call-back {
+    .content {
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1110px){
+  .t-sertificates-logo>div>.sertificate-link {
+    width: 170px;
+  }
+  .advantage-img {
+    display: none;
+  }
+  .advantages-content {
+    width: 100%;
+    .cold-gym-img {
+      div {
+        margin: 0 auto;
+      }
+    }
+    .advantages-infografic>div {
+      justify-content: space-around;
+    }
+  }
+  .call-back {
+    .content {
+      .question-logo {
+        margin-top: 45px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .fr-parallax {
+    display: none;
+  }
+  .about-company {
+    > div:not(.title-block) {
+      flex-direction: column;
+    }
+  }
+  .video-block {
+    width: 100%;
+    padding-bottom: 50%;
+    margin-bottom: 50px;
+  }
+  .about-company, .r-sertificates,
+  .about-company .fr-h2,
+  .r-sertificates .fr-h2 {
+    margin-bottom: 50px;
+  }
+  .t-sertificates-logo>div>.sertificate-link {
+    width: 50%;
+    max-width: 250px;
+  }
+  .cold-gym {
+    flex-direction: column;
+    .cold-gym-img {
+      margin-bottom: 40px;
+      > div {
+        margin: 0 auto;
+      }
+    }
+  }
+  .advantages .cold-gym-text {
+    width: 100%;
+  }
+  .advantages-infografic>div {
+    justify-content: space-around;
+    margin-bottom: 25px;
+  }
+  .advantages-infografic {
+    font-size: 13px;
+    .advantage-icon {
+      width: 98px;
+      height: 98px;
+      svg {
+        width: 49px;
+        height: 49px;
+      }
+    }
+  }
+  .advantages .cold-gym {
+    margin-bottom: 25px;
+  }
+  .cold-gym .cold-gym-img {
+    width: 100%;
+  }
+  .get-raine-advertising {
+    height: 720px;
+    padding: 50px 0 20px;
+    background: url(../img/rain-man-mob.jpg) center center no-repeat;
+    background-size: cover;
+    .slogan {
+      margin-bottom: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+    .group {
+      margin-bottom: 6px;
+      font-size: 16px;
+      text-align: center;
+    }
+    .prod {
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+
+  .info-advertising {
+    flex-direction: column-reverse;
+    .img-advertising {
+      transform: rotate(-90deg);
+      img {
+        display: block;
+        height: 90vw;
+        max-height: 320px;
+        width: auto;
+      }
+    }
+  }
+  .text-advertising {
+    margin-bottom: 20px;
+  }
+
+  .call-back {
+    text-align: center;
+    height: 429px;
+    svg {
+      max-width: 90%;
+    }
+    .content {
+      flex-direction: column;
+    }
+    .question-text {
+      font-size: 30px;
+    }
+    .button {
+      padding: 10px 15px;
+    }
+    .question-answer {
+      font-size: 20px;
+    }
+    .content {
+      .question-logo {
+        margin-top: 35px;
+      }
+    }
+  }
+
+}

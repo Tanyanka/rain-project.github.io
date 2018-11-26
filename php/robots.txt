@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /reviews/
+Disallow: /wp-admin/
+Disallow: /products/
